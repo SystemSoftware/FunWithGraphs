@@ -22,7 +22,14 @@ class Graph implements IGraph {
     public int edgeCount () {
         int sum = 0;
         for (HashMap.Entry<Integer,Set<Integer>> entry : graph.entrySet())
-            sum += entry.getValue().size();
+        	for(Integer target: entry.getValue()){
+        		if(target != entry.getKey()){
+        			sum ++;
+        		}else{
+        			sum +=2;
+        		}
+        	}
+            
         return sum/2;
     }
 
