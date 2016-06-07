@@ -66,9 +66,9 @@ class Graph implements IGraph {
         out.print("\tEdges");
         for (HashMap.Entry<Integer,Set<Integer>> entry : graph.entrySet()) {
             for (Integer n : entry.getValue())
-                if (entry.getKey() < n) {
-                    out.print(" <"+entry.getKey()+","+n+">");
-                }
+            	if(entry.getKey() <= n){
+            		out.print(" <"+entry.getKey()+","+n+">");
+            	}
         }
         out.println();
         out.println("}");
