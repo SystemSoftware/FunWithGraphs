@@ -91,7 +91,8 @@ class Graph implements IGraph {
                 node_1 = rand.nextInt(n_nodes) + 1;
                 node_2 = rand.nextInt(n_nodes) + 1;
 
-            } while (g.existsEdge(node_1,node_2));
+            } while (g.existsEdge(node_1,node_2) || node_1 == node_2);
+            System.out.println(node_1 +" "+node_2 );
             g.addEdge(node_1,node_2);
         }
         return g;
